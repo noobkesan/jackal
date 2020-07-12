@@ -1,2 +1,6 @@
 server:
   port: 7373
+
+spring:
+  main:
+    banner-mode: off
