@@ -4,3 +4,12 @@ server:
 spring:
   main:
     banner-mode: off
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: dratuti
+      password: dratuti
+      database: jackal
+      authentication-database: admin
+
