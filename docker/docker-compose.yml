@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo:4.2.8
+    restart: always
+    ports:
+    - 27017:27017
+    env_file:
+      - envs/mongo.env
+    volumes:
+      - mongo_volume:/data/db
+      - ./init/init.js:/docker-entrypoint-initdb.d/init.js:ro
+
+  mongo-express:
+    image: mongo-express:0.54
+    restart: always
+    ports:
+      - 7381:8081
+    env_file:
+      - envs/mongo.env
+
+volumes:
+  mongo_volume:
